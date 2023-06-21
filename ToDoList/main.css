@@ -39,71 +39,139 @@ main {
 	border-radius: 1vw;
 	box-shadow: var(--shadow-elevation-high);
 	width: 500px;
-    padding: 2em;
+	padding: 2em 0;
 }
 
-main h1 {
+.mainContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: 100%;
+	padding: 0 5em;
+}
+
+h1 {
 	text-align: center;
 	color: white;
+	margin-top: 0 !important;
 }
 
-main button {
+main button#createToDoButton {
 	background: #181515;
 	color: white;
 	border: 1px solid white;
-	padding: 1.5em 1.5em;
+	padding: 0.5em 1.5em;
+	border-radius: 100vw;
+	transition: 250ms;
+}
+
+main button#createToDoButton:hover {
+	background: white;
+	cursor: pointer;
+	color: #181515;
+}
+
+h1,
+input,
+#createToDoButton,
+.todolistContainer {
+	margin: 20px 0 0 0;
+}
+
+#todoInput {
+	background: white;
+	color: #181515;
+	border: 1px solid #181515;
+	padding: 0.8em 1.5em;
+	border-radius: 100vw;
+	transition: 250ms;
+	transition: 250ms;
+}
+
+#todoInput:focus {
+	outline: none;
+	border: 1px solid white;
+
+	transition: 250ms;
+	scale: 1.05;
+}
+
+.todolistContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: space-around;
+	align-items: center;
+	width: max-content;
+	min-height: 100px;
+	max-width: 100%;
+	width: 100%;
+	height: min-content;
+}
+
+/* TODO LIST ITEM */
+
+.todoItem {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 100%;
+	padding: 1em 2em;
+	color: white;
+	border-bottom: 1px solid white;
+}
+
+.itemActionButton {
+	background: #181515;
+	color: white;
+	border: 1px solid white;
+	padding: 1em 1em;
 	border-radius: 100vw;
 	transition: 250ms;
 	margin: 0 1em;
 }
 
-main button:hover {
+.itemActionButton:hover {
 	background: white;
 	cursor: pointer;
-}
-
-main button:hover span {
 	color: #181515;
 }
 
-.mainContainer > * {
-    margin: 1em 0;
+
+@keyframes doneToDo {
+	0% {
+		transform: scale(1);
+	}
+	50% {
+		transform: scale(1.1);
+	}
+	100% {
+		transform: scale(1);
+	}
 }
 
-.chronometer {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.done {
+	text-decoration: line-through;
+	animation: doneToDo 1s ease-in-out;
 }
 
-.time {
-    width: 250px;
-    text-align: center;
+.material-symbols-outlined {
+ pointer-events:none;
 }
 
-.buttons {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.dondeButtonTrue {
+	pointer-events: none;
+	background-color: #4caf50;
 }
 
-.display {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	background: white;
-	color: #181515;
-	padding: 0.2em 0.5em;
-	border-radius: 1vw;
-	box-shadow: var(--shadow-elevation-high);
-	font-size: 3em;
-	font-weight: 200;
+.deleteButton {
 	transition: 250ms;
-	width: fit-content;
 }
 
-.button {
-	display: flex;
-	justify-content: center;
-	align-items: center;
+.deleteButton:hover {
+	background-color: #f44336;
+}
+
+.deleteButton span {
+	color: white;
 }

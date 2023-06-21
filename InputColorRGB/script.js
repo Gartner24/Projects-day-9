@@ -36,3 +36,5 @@ blueInput.addEventListener('input', () => {
     blueText.innerText = blue;
     uptadeColor(red, green, blue);
 });
+
+window.onload = () => {uptadeColor(red, green, blue)}
