@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:opsz,wght@8..144,100&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pathway+Extreme:ital,opsz,wght@0,8..144,100;0,8..144,200;0,8..144,300;0,8..144,400;0,8..144,500;0,8..144,600;0,8..144,700;0,8..144,800;0,8..144,900;1,8..144,100;1,8..144,200;1,8..144,300;1,8..144,400;1,8..144,500;1,8..144,600;1,8..144,700;1,8..144,800;1,8..144,900&display=swap');
+
 
 :root {
     --shadow-color: 0deg 0% 0%;
@@ -20,11 +21,15 @@
 
 body {
 	min-height: 100vh;
-    background: white;
+    background-image: url("https://fondosmil.com/fondo/49609.jpg");
     display: flex;
     justify-content: center;
     align-items: center;
     font-family: 'Pathway Extreme', sans-serif;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
 }
 
 
@@ -33,32 +38,73 @@ main {
 	justify-content: center;
 	align-items: center;
     background: #181515;
-    padding: 5em 5em;
+    padding: 1.5em 8em;
     transition: 250ms;
-    border-radius: 1vw;
+    border-radius: 0.5vw;
     box-shadow: var(--shadow-elevation-high);
+    width: min-content;
 }
 
 .mainContainer > * {
     margin: 1em 0;
 }
 
-main h1 {
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+
+
+h1 {
+    color: #fff;
+    font-weight: 500;
     text-align: center;
-    color: white;
+    text-shadow: 0px 0px 1px #574c4c;
+}
+
+.quoteContainer {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 250ms;
+    width: 100%;
+    max-width: inherit;
+}
+
+.quoteContainer p {
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+.quote {
+    font-weight: 300;
+    text-align: center;
+    color: #fff;
+}
+
+.author {
+    font-weight: 400;
+    text-align: center;
+    color: #fff;
 }
 
 main button {
-	border: 0.2em solid hsl(185, 53%, 34%);
+	border: 0.2em solid #181515;
 	padding: 1.2em 3em;
 	border-radius: 100vw;
 	transition: background-color 250ms;
-	background: hsl(200 60% 20%);
-    color: white;
     font-weight: 900;
+	background: #fff;
+    color: #181515;
 }
 
 main button:hover {
 	background: #181515;
+    color: #fff;
+    border: 0.2em solid #fff;
 	cursor: pointer;
 }

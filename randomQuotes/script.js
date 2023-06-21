@@ -1,17 +1,19 @@
-const h1Container = document.querySelector('h1');
-const button = document.querySelector('button');
+import { citas } from './citas.js';
 
-const randomHexadecimalColorGenerator = () => {
-	const hexadecimalColor = Math.floor(Math.random() * 16777215).toString(16);
-	return hexadecimalColor;
+const quote = document.querySelector('.quote');
+const author = document.querySelector('.author');
+const changeQuoteButton = document.querySelector('#changeQuoteButton');
+
+const randomQuoteGenerator = () => {
+	const randomQuote = citas[Math.floor(Math.random() * citas.length)];
+	quote.textContent = randomQuote.texto;
+	author.textContent = randomQuote.autor;
 };
 
-const changeBackgroundColor = () => {
-	const hexadecimalColor = randomHexadecimalColorGenerator();
-	document.body.style.backgroundColor = `#${hexadecimalColor}`;
-	h1Container.textContent = `#${hexadecimalColor.toUpperCase()}`;
+changeQuoteButton.addEventListener('click', () => {
+	randomQuoteGenerator();
+});
+
+window.onload = () => {
+	randomQuoteGenerator();
 };
-
-window.addEventListener('load', changeBackgroundColor);
-
-button.addEventListener('click', changeBackgroundColor);
